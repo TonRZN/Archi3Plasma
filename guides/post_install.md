@@ -19,7 +19,14 @@ sudo pacman -S xorg-server xorg-init
 
 **Install i3-gaps**
 ```bash
-sudo pacman -S i3-gaps rofi feh
+sudo pacman -S i3-gaps feh compton
+```
+
+**Install a searcher**
+Choose one of the following
+```bash
+sudo pacman -S rofi
+sudo pacman -S albert
 ```
 
 **Install KDE Plasma**
@@ -34,11 +41,6 @@ sudo pacman -S lightdm lightdm-gtk-greeter
 sudo systemctl enable lightdm.service
 ```
 
-**Install GIT**
-```bash
-sudo pacman -S git
-```
-
 ### Install basic applications
 *This will install a terminal emulator, a file manager, a browser and a code/text editor*
 ```bash
@@ -47,6 +49,7 @@ sudo pacman -S konsole dolphin firefox code
 
 **Install yaourt**
 ```bash
+sudo pacman -S git
 sudo pacman -S --needed wget yajl
 git clone https://aur.archlinux.org/package-query.git
 cd package-query/
@@ -93,3 +96,11 @@ sudo pacman -S kdeplasma-addons
 ```bash
 sudo pacman -S ark kinfocenter kwalletmanager gwenview kipi-plugins gimp spectacle libreoffice-fresh okular speedcrunch deluge kfind kscreen
 ```
+
+## Install graphical drivers
+```bash
+sudo pacman -S nvidia
+#sudo pacman -S nvidia-lts #If running lts kernels
+```
+
+##
