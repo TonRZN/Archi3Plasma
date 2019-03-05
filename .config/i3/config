@@ -275,7 +275,7 @@
   #exec --no-startup-id "xrandr -s 1920x1080"
 
   exec --no-startup-id feh --bg-scale $HOME/Downloads/wall.png
-  exec --no-startup-id albert
+  #exec --no-startup-id albert
 
   # Compositor (Animations, Shadows, Transparency)
   exec --no-startup-id compton -cCFb --backend glx --vsync opengl
