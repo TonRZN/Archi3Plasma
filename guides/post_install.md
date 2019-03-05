@@ -9,7 +9,7 @@ useradd -m -G wheel [USER]
 ```
 
 **Modify the /etc/sudoers according to your preferences**
-I usually uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` but you can just uncomment the `%wheel ALL=(ALL) ALL` which is more secure
+I usually uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` but you can just uncomment the `%wheel ALL=(ALL) ALL` which is more secure, then log into your user
 
 ### Install graphical interface
 **Install X display server**
@@ -51,17 +51,19 @@ sudo pacman -S konsole dolphin firefox code
 ```bash
 sudo pacman -S git
 sudo pacman -S --needed wget yajl
+cd /tmp
 git clone https://aur.archlinux.org/package-query.git
 cd package-query/
 makepkg -si
-cd ..
+cd /tmp
 ```
 
 ```bash
+cd /tmp
 git clone https://aur.archlinux.org/yaourt.git
 cd yaourt/
 makepkg -si
-cd ..
+cd /tmp
 sudo rm -dR yaourt/ package-query/
 ```
 
@@ -79,7 +81,7 @@ sudo pacman -S powerline powerline-fonts
 
 **Install key packages**
 ```bash
-sudo pacman -S adobe-source-sans-pro-fonts aspell-en enchant gst-libav gst-plugins-good icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
+sudo pacman -S adobe-source-sans-pro-fonts otf-fira-code aspell-en enchant gst-libav gst-plugins-good icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
 ```
 
 **Install audio system**
@@ -103,4 +105,29 @@ sudo pacman -S nvidia
 #sudo pacman -S nvidia-lts #If running lts kernels
 ```
 
-##
+## Alternative graphical interface install
+As an alternative you can just clone the respository and run post_install.sh script with `sh post_install.sh` and it will install all the packages except from the yaourt that will need manual installing as following:
+```bash
+cd /tmp
+git clone https://aur.archlinux.org/package-query.git
+cd package-query/
+makepkg -si
+cd /tmp
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt/
+makepkg -si
+cd /tmp
+sudo rm -dR yaourt/ package-query/
+```
+
+Keep in mind that the script will not install everything, it will lack libre office for examble, it will only install the necessary for a good base installation, provinding (GIT, Fish, Konso, Firefox, Torrent, etc.)
+
+## Configure i3 + Plasma
+For the configs you will need to clone the repository, if not already, and move things to their respective folders:
+```
+config/compton.com ==> ~/.config/compton.conf
+config/i3/config ==> ~/.config/i3
+config/plasma-workspace/env ==> ~/.config/plasma-workspace/env
+X/.Xresources ==> ~/.Xresources 
+X/.xinitrc ==> ~/.xinitrc 
+```
