@@ -1,9 +1,9 @@
-#Arch Linux "simple" installation guide
+# Arch Linux "simple" installation guide
 
 Each line of command needs to be run individually
 Replace the [VARIABLE] with the actual thing requested inside the brackets
 
-###If need to change the keyboard layouts
+### If need to change the keyboard layouts
 
 **Lists all avaliable layouts**
 ```bash
@@ -31,7 +31,7 @@ timedatectl set-ntp true
 timedatectl status
 ```
 
-###Partition disks
+### Partition disks
 
 **List all disk**
 ```bash
@@ -58,7 +58,7 @@ mkfs.ext4 /dev/[PARTITION]
 mount /dev/[PARTITION> /<PATH]
 ```
 
-##Install Arch
+## Install Arch
 ```bash
 pacstrap /mnt base base-devel
 ```
@@ -80,7 +80,7 @@ ln -sf /usr/share/zoneinfo/[REGION]/[CITY] /etc/localtime
 hwclock --systohc
 ```
 
-###Localization
+### Localization
 *Uncomment en_US.UTF-8 in locale-gen*
 ```bash
 locale-gen
@@ -108,7 +108,7 @@ echo '[HOSTNAME]' >> /etc/hostname
 passwd
 ```
 
-###Install GRUB Bootloader
+### Install GRUB Bootloader
 ```bash
 pacman -S grub
 ```
@@ -123,7 +123,7 @@ grub-install --target=i386-pc /dev/[($1)]
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-###Finalize
+### Finalize
 ```bash
 exit
 umount -R /mnt

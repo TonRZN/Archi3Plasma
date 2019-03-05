@@ -1,9 +1,9 @@
-#After installing Arch Linux
+# After installing Arch Linux
 
 Simple things to do after a clean install of Arch Linux
 Will provide a i3-gaps + Plasma 5 KDE graphical environment  
 
-###Add new user
+### Add new user
 ```bash
 useradd -m -G wheel [USER]
 ```
@@ -11,7 +11,7 @@ useradd -m -G wheel [USER]
 **Modify the /etc/sudoers according to your preferences**
 I usually uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` but you can just uncomment the `%wheel ALL=(ALL) ALL` which is more secure
 
-###Install graphical interface
+### Install graphical interface
 **Install X display server**
 ```bash
 sudo pacman -S xorg-server xorg-init
@@ -39,7 +39,7 @@ sudo systemctl enable lightdm.service
 sudo pacman -S git
 ```
 
-###Install basic applications
+### Install basic applications
 *This will install a terminal emulator, a file manager, a browser and a code/text editor*
 ```bash
 sudo pacman -S konsole dolphin firefox code
