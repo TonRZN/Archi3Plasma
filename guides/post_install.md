@@ -14,7 +14,7 @@ I usually uncomment the line `%wheel ALL=(ALL) NOPASSWD: ALL` but you can just u
 ### Install graphical interface
 **Install X display server**
 ```bash
-sudo pacman -S xorg-server xorg-init
+sudo pacman -S xorg-server xorg-xinit
 ```
 
 **Install i3-gaps**
@@ -81,7 +81,7 @@ sudo pacman -S powerline powerline-fonts
 
 **Install key packages**
 ```bash
-sudo pacman -S adobe-source-sans-pro-fonts otf-fira-code aspell-en enchant gst-libav gst-plugins-good icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family
+sudo pacman -S adobe-source-sans-pro-fonts otf-fira-code aspell-en enchant gst-libav gst-plugins-good icedtea-web jre8-openjdk languagetool libmythes mythes-en pkgstats ttf-anonymous-pro ttf-bitstream-vera ttf-dejavu ttf-droid ttf-gentium ttf-liberation ttf-ubuntu-font-family zip ksshaskpass
 ```
 
 **Install audio system**

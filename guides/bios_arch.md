@@ -74,14 +74,14 @@ arch-chroot /mnt
 ```
 
 **Set time zone** 
-*Example: Brazil/Sao_Paulo*
+*Example: America/Sao_Paulo*
 ```bash
 ln -sf /usr/share/zoneinfo/[REGION]/[CITY] /etc/localtime
 hwclock --systohc
 ```
 
 ### Localization
-*Uncomment en_US.UTF-8 in locale-gen*
+*Uncomment en_US.UTF-8 in /etc/locale.gen*
 ```bash
 locale-gen
 ```
@@ -121,6 +121,12 @@ grub-install --target=i386-pc /dev/[($1)]
 **Generate GRUB config**
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+**Install network manager**
+```bash
+pacman -S networkmanager
+systemctl enable NetworkManager
 ```
 
 ### Finalize
